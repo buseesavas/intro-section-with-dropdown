@@ -1,0 +1,474 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap");
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Inter";
+  background-color: #fffdfa;
+  overflow-x: hidden;
+  font-family: "Epilogue";
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 16px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 16px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.hamburger-menu {
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+}
+
+.hamburger-menu input {
+  display: none;
+}
+
+.hamburger-menu span {
+  display: inline-block;
+  width: 100%;
+  height: 3px;
+  background-color: #00001a;
+}
+
+.hamburger-menu:has(:checked) span:nth-child(2) {
+  display: none;
+}
+.hamburger-menu:has(:checked) span:nth-child(1) {
+  transform: rotate(45deg);
+  translate: 0 3px;
+}
+.hamburger-menu:has(:checked) span:nth-child(3) {
+  transform: rotate(-45deg);
+  translate: 0 -3px;
+}
+
+body:has(input[name="hamburger-menu"]:checked) .mobile-menu {
+  display: block;
+}
+
+body:has(input[name="hamburger-menu"]:checked) .overlay {
+  display: block;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.mobile-menu {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-color: #fffdfa;
+  width: 70%;
+  margin-inline: auto 0px;
+  padding-inline: 25px;
+  padding-top: 144px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu a {
+  color: #00001a;
+  text-decoration: none;
+}
+
+body:has(input[name="hamburger-menu"]:checked) .mobile-menu {
+  display: block;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+li.menu {
+  display: inline-block;
+}
+
+.acilir-menu {
+  display: none;
+  position: relative;
+  padding: 24px 24px 0px 24px;
+}
+
+.acilir-menu a {
+  display: block;
+  text-align: left;
+}
+
+.menu:active .acilir-menu {
+  display: block;
+}
+
+.menu:hover .acilir-menu {
+  display: block;
+}
+
+.top-icon {
+  display: none;
+}
+
+.bottom-icon {
+  display: block;
+}
+
+.menu:active .bottom-icon {
+  display: none;
+}
+.menu:hover .bottom-icon {
+  display: none;
+}
+
+.menu:active .top-icon {
+  display: block;
+}
+.menu:hover .top-icon {
+  display: block;
+}
+
+.acilir-menu-btn {
+  display: flex;
+  gap: 17px;
+}
+
+.acilir-menu a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-register-btns-desktop {
+  display: none;
+}
+
+.login-register-btns-desktop a {
+  color: #686868;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  padding: 13px 22px;
+}
+
+.login-register-btns {
+  text-align: center;
+  display: block;
+}
+
+.register {
+  border: 1.5px solid #686868;
+  color: #686868;
+  padding: 13px 22px;
+  border-radius: 15px;
+}
+
+.login-register-btns .register {
+  display: block;
+}
+
+.snap-img .snap-img-desktop {
+  display: none;
+}
+
+.snap-img .snap-img-mobile {
+  max-width: 375px;
+  margin-inline: auto;
+}
+
+.snap-text {
+  text-align: center;
+  margin-inline: 16px;
+}
+
+.snap-text a {
+  text-decoration: none;
+  color: #fafafa;
+  background-color: #151515;
+  padding: 16px 22px 16px 22px;
+  border-radius: 13px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: #151515;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  color: #686868;
+  margin-bottom: 36px;
+}
+
+.links-mobile {
+  display: flex;
+  margin-inline: 16px;
+  margin-top: 58px;
+  gap: 28px;
+  margin-bottom: 94px;
+}
+
+.links-desktop {
+  display: none;
+}
+
+.container {
+  max-width: 1110px;
+  margin-inline: auto;
+}
+
+@media (width >= 768px) {
+  .container {
+    margin-bottom: 120px;
+  }
+  h1 {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 80px;
+    text-align: left;
+    margin-bottom: 48px;
+    margin-top: 0px;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    margin-bottom: 51px;
+  }
+
+  .snap-text a {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.25px;
+    text-align: center;
+    padding: 19px 30px 19px 30px;
+    float: left;
+  }
+
+  .snap-text{
+    max-width: 540px;
+    padding-right: 20px;
+    padding-top: 104px;
+  }
+
+  .learn-more-btn a:hover {
+   background-color: #fffdfa;
+   color: #151515;
+   border: 1px solid #151515;
+  }
+
+  .links-mobile {
+    display: none;
+  }
+
+  .links-desktop {
+    display: flex;
+    margin-top: 215px;
+    gap: 40px;
+  }
+  .snap-img .snap-img-desktop {
+    display: block;
+    float: right;
+    max-width: 480px;
+  }
+
+  .snap-img .snap-img-mobile {
+    display: none;
+  }
+
+  .login-register-btns-desktop {
+    display: flex;
+  }
+
+  .login-register-btns-desktop a:hover {
+    color: #151515;
+  }
+
+  .register:hover {
+    color: #151515;
+    border: 1.5px solid #151515;
+  }
+
+  .snap-icon {
+    margin-right: 60px;
+  }
+
+  nav div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .acilir-menu {
+    display: none;
+    position: absolute;
+    width: 153px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 10px 40px 0px #00000026;
+    z-index: 999; 
+  }
+
+  .desktop-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .menu:hover .acilir-menu {
+    display: block;
+  }
+
+  .menu:hover .acilir-menu-btn{
+    color: #151515;
+  }
+
+  .desktop-menu ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .desktop-menu ul a {
+    text-decoration: none;
+    color: #5e607a;
+  }
+
+  .desktop-menu ul a:hover {
+    color: #151515;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .header {
+    padding-top: 24px;
+    padding-inline: 40px;
+  }
+  .mobile-menu {
+    display: flex;
+    gap: 20px;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+}
